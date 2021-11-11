@@ -1,8 +1,10 @@
 <p align=center><a href="https://learn.srlinux.dev"><img src=https://gitlab.com/rdodin/pics/-/wikis/uploads/e06b64d8bda6ef482c486120628e6706/srl-ndk-go.svg?sanitize=true/></a></p>
 
+[![Go](https://img.shields.io/badge/Go-reference-blue?style=flat-square&color=00c9ff&labelColor=bec8d2)](https://pkg.go.dev/github.com/nokia/srlinux-ndk-go/v21@v21.6.2-1/ndk)
+
 ---
 
-The Nokia SR Linux NetOps Development Kit (NDK) allows operators to program high-performance, integrated agents that run alongside the Nokia Service Router Linux (SR Linux).
+The Nokia SR Linux [NetOps Development Kit (NDK)](https://learn.srlinux.dev/ndk/intro/) allows operators to program high-performance, integrated agents that run alongside the Nokia Service Router Linux (SR Linux).
 
 This repository contains generated Go code for [SR Linux NDK Protocol buffers](https://github.com/nokia/srlinux-ndk-protobufs).
 
