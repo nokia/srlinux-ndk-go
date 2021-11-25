@@ -38,7 +38,7 @@ func NewSdkMgrNextHopGroupServiceClient(cc grpc.ClientConnInterface) SdkMgrNextH
 
 func (c *sdkMgrNextHopGroupServiceClient) NextHopGroupAddOrUpdate(ctx context.Context, in *NextHopGroupRequest, opts ...grpc.CallOption) (*NextHopGroupResponse, error) {
 	out := new(NextHopGroupResponse)
-	err := c.cc.Invoke(ctx, "/ndk.SdkMgrNextHopGroupService/NextHopGroupAddOrUpdate", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/srlinux.sdk.SdkMgrNextHopGroupService/NextHopGroupAddOrUpdate", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -47,7 +47,7 @@ func (c *sdkMgrNextHopGroupServiceClient) NextHopGroupAddOrUpdate(ctx context.Co
 
 func (c *sdkMgrNextHopGroupServiceClient) NextHopGroupDelete(ctx context.Context, in *NextHopGroupDeleteRequest, opts ...grpc.CallOption) (*NextHopGroupDeleteResponse, error) {
 	out := new(NextHopGroupDeleteResponse)
-	err := c.cc.Invoke(ctx, "/ndk.SdkMgrNextHopGroupService/NextHopGroupDelete", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/srlinux.sdk.SdkMgrNextHopGroupService/NextHopGroupDelete", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -56,7 +56,7 @@ func (c *sdkMgrNextHopGroupServiceClient) NextHopGroupDelete(ctx context.Context
 
 func (c *sdkMgrNextHopGroupServiceClient) SyncStart(ctx context.Context, in *SyncRequest, opts ...grpc.CallOption) (*SyncResponse, error) {
 	out := new(SyncResponse)
-	err := c.cc.Invoke(ctx, "/ndk.SdkMgrNextHopGroupService/SyncStart", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/srlinux.sdk.SdkMgrNextHopGroupService/SyncStart", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -65,7 +65,7 @@ func (c *sdkMgrNextHopGroupServiceClient) SyncStart(ctx context.Context, in *Syn
 
 func (c *sdkMgrNextHopGroupServiceClient) SyncEnd(ctx context.Context, in *SyncRequest, opts ...grpc.CallOption) (*SyncResponse, error) {
 	out := new(SyncResponse)
-	err := c.cc.Invoke(ctx, "/ndk.SdkMgrNextHopGroupService/SyncEnd", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/srlinux.sdk.SdkMgrNextHopGroupService/SyncEnd", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -127,7 +127,7 @@ func _SdkMgrNextHopGroupService_NextHopGroupAddOrUpdate_Handler(srv interface{},
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ndk.SdkMgrNextHopGroupService/NextHopGroupAddOrUpdate",
+		FullMethod: "/srlinux.sdk.SdkMgrNextHopGroupService/NextHopGroupAddOrUpdate",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SdkMgrNextHopGroupServiceServer).NextHopGroupAddOrUpdate(ctx, req.(*NextHopGroupRequest))
@@ -145,7 +145,7 @@ func _SdkMgrNextHopGroupService_NextHopGroupDelete_Handler(srv interface{}, ctx 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ndk.SdkMgrNextHopGroupService/NextHopGroupDelete",
+		FullMethod: "/srlinux.sdk.SdkMgrNextHopGroupService/NextHopGroupDelete",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SdkMgrNextHopGroupServiceServer).NextHopGroupDelete(ctx, req.(*NextHopGroupDeleteRequest))
@@ -163,7 +163,7 @@ func _SdkMgrNextHopGroupService_SyncStart_Handler(srv interface{}, ctx context.C
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ndk.SdkMgrNextHopGroupService/SyncStart",
+		FullMethod: "/srlinux.sdk.SdkMgrNextHopGroupService/SyncStart",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SdkMgrNextHopGroupServiceServer).SyncStart(ctx, req.(*SyncRequest))
@@ -181,7 +181,7 @@ func _SdkMgrNextHopGroupService_SyncEnd_Handler(srv interface{}, ctx context.Con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ndk.SdkMgrNextHopGroupService/SyncEnd",
+		FullMethod: "/srlinux.sdk.SdkMgrNextHopGroupService/SyncEnd",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SdkMgrNextHopGroupServiceServer).SyncEnd(ctx, req.(*SyncRequest))
@@ -193,7 +193,7 @@ func _SdkMgrNextHopGroupService_SyncEnd_Handler(srv interface{}, ctx context.Con
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var SdkMgrNextHopGroupService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "ndk.SdkMgrNextHopGroupService",
+	ServiceName: "srlinux.sdk.SdkMgrNextHopGroupService",
 	HandlerType: (*SdkMgrNextHopGroupServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

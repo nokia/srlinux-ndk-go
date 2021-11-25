@@ -41,7 +41,7 @@ func NewSdkMgrMplsRouteServiceClient(cc grpc.ClientConnInterface) SdkMgrMplsRout
 // Deprecated: Do not use.
 func (c *sdkMgrMplsRouteServiceClient) MplsRouteAddOrUpdate(ctx context.Context, in *MplsRouteAddRequest, opts ...grpc.CallOption) (*MplsRouteAddResponse, error) {
 	out := new(MplsRouteAddResponse)
-	err := c.cc.Invoke(ctx, "/ndk.SdkMgrMplsRouteService/MplsRouteAddOrUpdate", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/srlinux.sdk.SdkMgrMplsRouteService/MplsRouteAddOrUpdate", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -51,7 +51,7 @@ func (c *sdkMgrMplsRouteServiceClient) MplsRouteAddOrUpdate(ctx context.Context,
 // Deprecated: Do not use.
 func (c *sdkMgrMplsRouteServiceClient) MplsRouteDelete(ctx context.Context, in *MplsRouteDeleteRequest, opts ...grpc.CallOption) (*MplsRouteDeleteResponse, error) {
 	out := new(MplsRouteDeleteResponse)
-	err := c.cc.Invoke(ctx, "/ndk.SdkMgrMplsRouteService/MplsRouteDelete", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/srlinux.sdk.SdkMgrMplsRouteService/MplsRouteDelete", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -60,7 +60,7 @@ func (c *sdkMgrMplsRouteServiceClient) MplsRouteDelete(ctx context.Context, in *
 
 func (c *sdkMgrMplsRouteServiceClient) SyncStart(ctx context.Context, in *SyncRequest, opts ...grpc.CallOption) (*SyncResponse, error) {
 	out := new(SyncResponse)
-	err := c.cc.Invoke(ctx, "/ndk.SdkMgrMplsRouteService/SyncStart", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/srlinux.sdk.SdkMgrMplsRouteService/SyncStart", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -69,7 +69,7 @@ func (c *sdkMgrMplsRouteServiceClient) SyncStart(ctx context.Context, in *SyncRe
 
 func (c *sdkMgrMplsRouteServiceClient) SyncEnd(ctx context.Context, in *SyncRequest, opts ...grpc.CallOption) (*SyncResponse, error) {
 	out := new(SyncResponse)
-	err := c.cc.Invoke(ctx, "/ndk.SdkMgrMplsRouteService/SyncEnd", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/srlinux.sdk.SdkMgrMplsRouteService/SyncEnd", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -133,7 +133,7 @@ func _SdkMgrMplsRouteService_MplsRouteAddOrUpdate_Handler(srv interface{}, ctx c
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ndk.SdkMgrMplsRouteService/MplsRouteAddOrUpdate",
+		FullMethod: "/srlinux.sdk.SdkMgrMplsRouteService/MplsRouteAddOrUpdate",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SdkMgrMplsRouteServiceServer).MplsRouteAddOrUpdate(ctx, req.(*MplsRouteAddRequest))
@@ -151,7 +151,7 @@ func _SdkMgrMplsRouteService_MplsRouteDelete_Handler(srv interface{}, ctx contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ndk.SdkMgrMplsRouteService/MplsRouteDelete",
+		FullMethod: "/srlinux.sdk.SdkMgrMplsRouteService/MplsRouteDelete",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SdkMgrMplsRouteServiceServer).MplsRouteDelete(ctx, req.(*MplsRouteDeleteRequest))
@@ -169,7 +169,7 @@ func _SdkMgrMplsRouteService_SyncStart_Handler(srv interface{}, ctx context.Cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ndk.SdkMgrMplsRouteService/SyncStart",
+		FullMethod: "/srlinux.sdk.SdkMgrMplsRouteService/SyncStart",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SdkMgrMplsRouteServiceServer).SyncStart(ctx, req.(*SyncRequest))
@@ -187,7 +187,7 @@ func _SdkMgrMplsRouteService_SyncEnd_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ndk.SdkMgrMplsRouteService/SyncEnd",
+		FullMethod: "/srlinux.sdk.SdkMgrMplsRouteService/SyncEnd",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SdkMgrMplsRouteServiceServer).SyncEnd(ctx, req.(*SyncRequest))
@@ -199,7 +199,7 @@ func _SdkMgrMplsRouteService_SyncEnd_Handler(srv interface{}, ctx context.Contex
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var SdkMgrMplsRouteService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "ndk.SdkMgrMplsRouteService",
+	ServiceName: "srlinux.sdk.SdkMgrMplsRouteService",
 	HandlerType: (*SdkMgrMplsRouteServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

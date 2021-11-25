@@ -34,7 +34,7 @@ func NewSdkMgrTelemetryServiceClient(cc grpc.ClientConnInterface) SdkMgrTelemetr
 
 func (c *sdkMgrTelemetryServiceClient) TelemetryAddOrUpdate(ctx context.Context, in *TelemetryUpdateRequest, opts ...grpc.CallOption) (*TelemetryUpdateResponse, error) {
 	out := new(TelemetryUpdateResponse)
-	err := c.cc.Invoke(ctx, "/ndk.SdkMgrTelemetryService/TelemetryAddOrUpdate", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/srlinux.sdk.SdkMgrTelemetryService/TelemetryAddOrUpdate", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -43,7 +43,7 @@ func (c *sdkMgrTelemetryServiceClient) TelemetryAddOrUpdate(ctx context.Context,
 
 func (c *sdkMgrTelemetryServiceClient) TelemetryDelete(ctx context.Context, in *TelemetryDeleteRequest, opts ...grpc.CallOption) (*TelemetryDeleteResponse, error) {
 	out := new(TelemetryDeleteResponse)
-	err := c.cc.Invoke(ctx, "/ndk.SdkMgrTelemetryService/TelemetryDelete", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/srlinux.sdk.SdkMgrTelemetryService/TelemetryDelete", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -95,7 +95,7 @@ func _SdkMgrTelemetryService_TelemetryAddOrUpdate_Handler(srv interface{}, ctx c
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ndk.SdkMgrTelemetryService/TelemetryAddOrUpdate",
+		FullMethod: "/srlinux.sdk.SdkMgrTelemetryService/TelemetryAddOrUpdate",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SdkMgrTelemetryServiceServer).TelemetryAddOrUpdate(ctx, req.(*TelemetryUpdateRequest))
@@ -113,7 +113,7 @@ func _SdkMgrTelemetryService_TelemetryDelete_Handler(srv interface{}, ctx contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ndk.SdkMgrTelemetryService/TelemetryDelete",
+		FullMethod: "/srlinux.sdk.SdkMgrTelemetryService/TelemetryDelete",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SdkMgrTelemetryServiceServer).TelemetryDelete(ctx, req.(*TelemetryDeleteRequest))
@@ -125,7 +125,7 @@ func _SdkMgrTelemetryService_TelemetryDelete_Handler(srv interface{}, ctx contex
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var SdkMgrTelemetryService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "ndk.SdkMgrTelemetryService",
+	ServiceName: "srlinux.sdk.SdkMgrTelemetryService",
 	HandlerType: (*SdkMgrTelemetryServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

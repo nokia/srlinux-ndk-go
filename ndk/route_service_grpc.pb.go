@@ -38,7 +38,7 @@ func NewSdkMgrRouteServiceClient(cc grpc.ClientConnInterface) SdkMgrRouteService
 
 func (c *sdkMgrRouteServiceClient) RouteAddOrUpdate(ctx context.Context, in *RouteAddRequest, opts ...grpc.CallOption) (*RouteAddResponse, error) {
 	out := new(RouteAddResponse)
-	err := c.cc.Invoke(ctx, "/ndk.SdkMgrRouteService/RouteAddOrUpdate", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/srlinux.sdk.SdkMgrRouteService/RouteAddOrUpdate", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -47,7 +47,7 @@ func (c *sdkMgrRouteServiceClient) RouteAddOrUpdate(ctx context.Context, in *Rou
 
 func (c *sdkMgrRouteServiceClient) RouteDelete(ctx context.Context, in *RouteDeleteRequest, opts ...grpc.CallOption) (*RouteDeleteResponse, error) {
 	out := new(RouteDeleteResponse)
-	err := c.cc.Invoke(ctx, "/ndk.SdkMgrRouteService/RouteDelete", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/srlinux.sdk.SdkMgrRouteService/RouteDelete", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -56,7 +56,7 @@ func (c *sdkMgrRouteServiceClient) RouteDelete(ctx context.Context, in *RouteDel
 
 func (c *sdkMgrRouteServiceClient) SyncStart(ctx context.Context, in *SyncRequest, opts ...grpc.CallOption) (*SyncResponse, error) {
 	out := new(SyncResponse)
-	err := c.cc.Invoke(ctx, "/ndk.SdkMgrRouteService/SyncStart", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/srlinux.sdk.SdkMgrRouteService/SyncStart", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -65,7 +65,7 @@ func (c *sdkMgrRouteServiceClient) SyncStart(ctx context.Context, in *SyncReques
 
 func (c *sdkMgrRouteServiceClient) SyncEnd(ctx context.Context, in *SyncRequest, opts ...grpc.CallOption) (*SyncResponse, error) {
 	out := new(SyncResponse)
-	err := c.cc.Invoke(ctx, "/ndk.SdkMgrRouteService/SyncEnd", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/srlinux.sdk.SdkMgrRouteService/SyncEnd", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -126,7 +126,7 @@ func _SdkMgrRouteService_RouteAddOrUpdate_Handler(srv interface{}, ctx context.C
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ndk.SdkMgrRouteService/RouteAddOrUpdate",
+		FullMethod: "/srlinux.sdk.SdkMgrRouteService/RouteAddOrUpdate",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SdkMgrRouteServiceServer).RouteAddOrUpdate(ctx, req.(*RouteAddRequest))
@@ -144,7 +144,7 @@ func _SdkMgrRouteService_RouteDelete_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ndk.SdkMgrRouteService/RouteDelete",
+		FullMethod: "/srlinux.sdk.SdkMgrRouteService/RouteDelete",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SdkMgrRouteServiceServer).RouteDelete(ctx, req.(*RouteDeleteRequest))
@@ -162,7 +162,7 @@ func _SdkMgrRouteService_SyncStart_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ndk.SdkMgrRouteService/SyncStart",
+		FullMethod: "/srlinux.sdk.SdkMgrRouteService/SyncStart",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SdkMgrRouteServiceServer).SyncStart(ctx, req.(*SyncRequest))
@@ -180,7 +180,7 @@ func _SdkMgrRouteService_SyncEnd_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ndk.SdkMgrRouteService/SyncEnd",
+		FullMethod: "/srlinux.sdk.SdkMgrRouteService/SyncEnd",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SdkMgrRouteServiceServer).SyncEnd(ctx, req.(*SyncRequest))
@@ -192,7 +192,7 @@ func _SdkMgrRouteService_SyncEnd_Handler(srv interface{}, ctx context.Context, d
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var SdkMgrRouteService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "ndk.SdkMgrRouteService",
+	ServiceName: "srlinux.sdk.SdkMgrRouteService",
 	HandlerType: (*SdkMgrRouteServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

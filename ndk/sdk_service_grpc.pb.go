@@ -42,7 +42,7 @@ func NewSdkMgrServiceClient(cc grpc.ClientConnInterface) SdkMgrServiceClient {
 
 func (c *sdkMgrServiceClient) AgentRegister(ctx context.Context, in *AgentRegistrationRequest, opts ...grpc.CallOption) (*AgentRegistrationResponse, error) {
 	out := new(AgentRegistrationResponse)
-	err := c.cc.Invoke(ctx, "/ndk.SdkMgrService/AgentRegister", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/srlinux.sdk.SdkMgrService/AgentRegister", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -51,7 +51,7 @@ func (c *sdkMgrServiceClient) AgentRegister(ctx context.Context, in *AgentRegist
 
 func (c *sdkMgrServiceClient) AgentUnRegister(ctx context.Context, in *AgentRegistrationRequest, opts ...grpc.CallOption) (*AgentRegistrationResponse, error) {
 	out := new(AgentRegistrationResponse)
-	err := c.cc.Invoke(ctx, "/ndk.SdkMgrService/AgentUnRegister", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/srlinux.sdk.SdkMgrService/AgentUnRegister", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -60,7 +60,7 @@ func (c *sdkMgrServiceClient) AgentUnRegister(ctx context.Context, in *AgentRegi
 
 func (c *sdkMgrServiceClient) NotificationRegister(ctx context.Context, in *NotificationRegisterRequest, opts ...grpc.CallOption) (*NotificationRegisterResponse, error) {
 	out := new(NotificationRegisterResponse)
-	err := c.cc.Invoke(ctx, "/ndk.SdkMgrService/NotificationRegister", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/srlinux.sdk.SdkMgrService/NotificationRegister", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -69,7 +69,7 @@ func (c *sdkMgrServiceClient) NotificationRegister(ctx context.Context, in *Noti
 
 func (c *sdkMgrServiceClient) NotificationQuery(ctx context.Context, in *NotificationQueryRequest, opts ...grpc.CallOption) (*NotificationQueryResponse, error) {
 	out := new(NotificationQueryResponse)
-	err := c.cc.Invoke(ctx, "/ndk.SdkMgrService/NotificationQuery", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/srlinux.sdk.SdkMgrService/NotificationQuery", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -78,7 +78,7 @@ func (c *sdkMgrServiceClient) NotificationQuery(ctx context.Context, in *Notific
 
 func (c *sdkMgrServiceClient) KeepAlive(ctx context.Context, in *KeepAliveRequest, opts ...grpc.CallOption) (*KeepAliveResponse, error) {
 	out := new(KeepAliveResponse)
-	err := c.cc.Invoke(ctx, "/ndk.SdkMgrService/KeepAlive", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/srlinux.sdk.SdkMgrService/KeepAlive", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -87,7 +87,7 @@ func (c *sdkMgrServiceClient) KeepAlive(ctx context.Context, in *KeepAliveReques
 
 func (c *sdkMgrServiceClient) GetAppId(ctx context.Context, in *AppIdRequest, opts ...grpc.CallOption) (*AppIdResponse, error) {
 	out := new(AppIdResponse)
-	err := c.cc.Invoke(ctx, "/ndk.SdkMgrService/GetAppId", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/srlinux.sdk.SdkMgrService/GetAppId", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -158,7 +158,7 @@ func _SdkMgrService_AgentRegister_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ndk.SdkMgrService/AgentRegister",
+		FullMethod: "/srlinux.sdk.SdkMgrService/AgentRegister",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SdkMgrServiceServer).AgentRegister(ctx, req.(*AgentRegistrationRequest))
@@ -176,7 +176,7 @@ func _SdkMgrService_AgentUnRegister_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ndk.SdkMgrService/AgentUnRegister",
+		FullMethod: "/srlinux.sdk.SdkMgrService/AgentUnRegister",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SdkMgrServiceServer).AgentUnRegister(ctx, req.(*AgentRegistrationRequest))
@@ -194,7 +194,7 @@ func _SdkMgrService_NotificationRegister_Handler(srv interface{}, ctx context.Co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ndk.SdkMgrService/NotificationRegister",
+		FullMethod: "/srlinux.sdk.SdkMgrService/NotificationRegister",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SdkMgrServiceServer).NotificationRegister(ctx, req.(*NotificationRegisterRequest))
@@ -212,7 +212,7 @@ func _SdkMgrService_NotificationQuery_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ndk.SdkMgrService/NotificationQuery",
+		FullMethod: "/srlinux.sdk.SdkMgrService/NotificationQuery",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SdkMgrServiceServer).NotificationQuery(ctx, req.(*NotificationQueryRequest))
@@ -230,7 +230,7 @@ func _SdkMgrService_KeepAlive_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ndk.SdkMgrService/KeepAlive",
+		FullMethod: "/srlinux.sdk.SdkMgrService/KeepAlive",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SdkMgrServiceServer).KeepAlive(ctx, req.(*KeepAliveRequest))
@@ -248,7 +248,7 @@ func _SdkMgrService_GetAppId_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ndk.SdkMgrService/GetAppId",
+		FullMethod: "/srlinux.sdk.SdkMgrService/GetAppId",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SdkMgrServiceServer).GetAppId(ctx, req.(*AppIdRequest))
@@ -260,7 +260,7 @@ func _SdkMgrService_GetAppId_Handler(srv interface{}, ctx context.Context, dec f
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var SdkMgrService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "ndk.SdkMgrService",
+	ServiceName: "srlinux.sdk.SdkMgrService",
 	HandlerType: (*SdkMgrServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -309,7 +309,7 @@ func NewSdkNotificationServiceClient(cc grpc.ClientConnInterface) SdkNotificatio
 }
 
 func (c *sdkNotificationServiceClient) NotificationStream(ctx context.Context, in *NotificationStreamRequest, opts ...grpc.CallOption) (SdkNotificationService_NotificationStreamClient, error) {
-	stream, err := c.cc.NewStream(ctx, &SdkNotificationService_ServiceDesc.Streams[0], "/ndk.SdkNotificationService/NotificationStream", opts...)
+	stream, err := c.cc.NewStream(ctx, &SdkNotificationService_ServiceDesc.Streams[0], "/srlinux.sdk.SdkNotificationService/NotificationStream", opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -395,7 +395,7 @@ func (x *sdkNotificationServiceNotificationStreamServer) Send(m *NotificationStr
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var SdkNotificationService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "ndk.SdkNotificationService",
+	ServiceName: "srlinux.sdk.SdkNotificationService",
 	HandlerType: (*SdkNotificationServiceServer)(nil),
 	Methods:     []grpc.MethodDesc{},
 	Streams: []grpc.StreamDesc{
