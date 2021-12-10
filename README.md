@@ -1,6 +1,6 @@
 <p align=center><a href="https://learn.srlinux.dev"><img src=https://gitlab.com/rdodin/pics/-/wikis/uploads/e06b64d8bda6ef482c486120628e6706/srl-ndk-go.svg?sanitize=true/></a></p>
 
-[![Go](https://img.shields.io/badge/Go-reference-blue?style=flat-square&color=00c9ff&labelColor=bec8d2)](https://pkg.go.dev/github.com/nokia/srlinux-ndk-go@v0.1.0-rc1/ndk)
+[![Go](https://img.shields.io/badge/Go-reference-blue?style=flat-square&color=00c9ff&labelColor=bec8d2)](https://pkg.go.dev/github.com/nokia/srlinux-ndk-go@v0.1.0/ndk)
 
 ---
 
