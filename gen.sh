@@ -37,3 +37,7 @@ docker run -v ${PROTO_DIR}:/in -u $(id -u):$(id -g) -v ${PROJ_DIR}:/out ${PROTOC
 # it is safer to create an rc release first, and then promote it to a stable release
 # once the apps are tested to work with it
 # gh release create v0.2.0-rc1 --generate-notes
+
+# when publishing the release from a working branch (such as v0.4.0-rc1)
+# create a release that points to the branch
+# gh release create v0.4.0-rc1 --target v0.4.0 --generate-notes
