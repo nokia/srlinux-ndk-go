@@ -21,14 +21,14 @@ if [ -z "$1" ]; then
 fi
 
 # remove previously generated bindings
-rm -rf ${PROJ_DIR}/ndk
+sudo rm -rf ${PROJ_DIR}/ndk
 
 # checkout protos to the desired version
 cd ${PROTO_DIR} && git checkout ${PROTO_VER}
 
 PROTOC_IMAGE=ghcr.io/srl-labs/protoc:24.4__1.31.0
 
-docker run -v ${PROTO_DIR}:/in -v ${PROJ_DIR}:/out ${PROTOC_IMAGE} \
+docker run -v ${PROTO_DIR}:/in -u $(id -u):$(id -g) -v ${PROJ_DIR}:/out ${PROTOC_IMAGE} \
   ash -c "protoc --go_out=paths=source_relative:/out --go_opt=paths=source_relative --go-grpc_out=paths=source_relative:/out --go-grpc_opt=paths=source_relative,require_unimplemented_servers=false ndk/*.proto"
 
 # once the bindings are generated, we can push it to the repo
