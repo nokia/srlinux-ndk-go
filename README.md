@@ -12,7 +12,7 @@ This repository contains generated Go code for [SR Linux NDK Protocol buffers](h
 
 The Go module version is synchronized with the SR Linux [NDK protobuf releases](https://github.com/nokia/srlinux-ndk-protobufs).
 
-Users can fetch the Go bindings for NDK v0.1.0 with `go get` command as follows:
+Users can fetch the Go bindings for NDK with `go get` command as follows:
 
 ```bash
 # get latest ndk package

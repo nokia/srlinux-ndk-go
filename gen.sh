@@ -12,7 +12,7 @@ PROJ_DIR=$(pwd)
 PROTO_DIR=~/nokia/srlinux-ndk-protobufs
 
 # tag matching the protobuf tag in the https://github.com/nokia/srlinux-ndk-protobufs
-# from which the Python bindings are about to be generated
+# from which the bindings are about to be generated
 PROTO_VER=$1
 
 if [ -z "$1" ]; then
@@ -26,7 +26,9 @@ rm -rf ${PROJ_DIR}/ndk
 # checkout protos to the desired version
 cd ${PROTO_DIR} && git checkout ${PROTO_VER}
 
-docker run -v ${PROTO_DIR}:/in -v ${PROJ_DIR}:/out ghcr.io/srl-labs/protoc:23.3__1.31.0 \
+PROTOC_IMAGE=ghcr.io/srl-labs/protoc:24.4__1.31.0
+
+docker run -v ${PROTO_DIR}:/in -v ${PROJ_DIR}:/out ${PROTOC_IMAGE} \
   ash -c "protoc --go_out=paths=source_relative:/out --go_opt=paths=source_relative --go-grpc_out=paths=source_relative:/out --go-grpc_opt=paths=source_relative,require_unimplemented_servers=false ndk/*.proto"
 
 # once the bindings are generated, we can push it to the repo
