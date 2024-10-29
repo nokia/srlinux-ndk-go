@@ -4,7 +4,7 @@
 //  Copyright (c) 2018 Nokia
 //*********************************************************************************************************************
 
-// NDK Version: v0.3.0
+// NDK Version: v0.4.0
 
 //*
 //  Network programming APIs and messages. This is the base layer for agent registration, router event notifications such as interface, LLDP, BFD, and so on; also provides keepalive functionality to detect agent liveliness
