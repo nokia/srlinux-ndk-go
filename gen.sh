@@ -24,7 +24,7 @@ fi
 rm -rf ${PROJ_DIR}/ndk
 
 # checkout protos to the desired version
-cd ${PROTO_DIR} && git checkout ${PROTO_VER}
+cd ${PROTO_DIR} && git checkout refs/tags/${PROTO_VER}
 
 PROTOC_IMAGE=ghcr.io/srl-labs/protoc:24.4__1.31.0
 
