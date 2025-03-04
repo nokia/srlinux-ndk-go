@@ -2,9 +2,9 @@
 //  Description: interface between router agents and SDK service manager
 //
 //  Copyright (c) 2018 Nokia
-//*********************************************************************************************************************
+//********************************************************************************************************************
 
-// NDK Version: v0.4.0
+// NDK Version: v0.5.0
 
 //*
 //  Network programming APIs and messages. This is the base layer for agent registration, router event notifications such as interface, LLDP, BFD, and so on; also provides keepalive functionality to detect agent liveliness
@@ -42,17 +42,17 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type SdkMgrServiceClient interface {
-	// / Register agent
+	// Register agent
 	AgentRegister(ctx context.Context, in *AgentRegistrationRequest, opts ...grpc.CallOption) (*AgentRegistrationResponse, error)
-	// / Unregister agent
+	// Unregister agent
 	AgentUnRegister(ctx context.Context, in *AgentRegistrationRequest, opts ...grpc.CallOption) (*AgentRegistrationResponse, error)
-	// / Register for event notifications
+	// Register for event notifications
 	NotificationRegister(ctx context.Context, in *NotificationRegisterRequest, opts ...grpc.CallOption) (*NotificationRegisterResponse, error)
-	// / Returns current or specific notification subscription details
+	// Returns current or specific notification subscription details
 	NotificationQuery(ctx context.Context, in *NotificationQueryRequest, opts ...grpc.CallOption) (*NotificationQueryResponse, error)
-	// / Send periodic keepalive message
+	// Send periodic keepalive message
 	KeepAlive(ctx context.Context, in *KeepAliveRequest, opts ...grpc.CallOption) (*KeepAliveResponse, error)
-	// / Get application name from application identifier
+	// Get application name from application identifier
 	GetAppId(ctx context.Context, in *AppIdRequest, opts ...grpc.CallOption) (*AppIdResponse, error)
 }
 
@@ -122,17 +122,17 @@ func (c *sdkMgrServiceClient) GetAppId(ctx context.Context, in *AppIdRequest, op
 // All implementations should embed UnimplementedSdkMgrServiceServer
 // for forward compatibility
 type SdkMgrServiceServer interface {
-	// / Register agent
+	// Register agent
 	AgentRegister(context.Context, *AgentRegistrationRequest) (*AgentRegistrationResponse, error)
-	// / Unregister agent
+	// Unregister agent
 	AgentUnRegister(context.Context, *AgentRegistrationRequest) (*AgentRegistrationResponse, error)
-	// / Register for event notifications
+	// Register for event notifications
 	NotificationRegister(context.Context, *NotificationRegisterRequest) (*NotificationRegisterResponse, error)
-	// / Returns current or specific notification subscription details
+	// Returns current or specific notification subscription details
 	NotificationQuery(context.Context, *NotificationQueryRequest) (*NotificationQueryResponse, error)
-	// / Send periodic keepalive message
+	// Send periodic keepalive message
 	KeepAlive(context.Context, *KeepAliveRequest) (*KeepAliveResponse, error)
-	// / Get application name from application identifier
+	// Get application name from application identifier
 	GetAppId(context.Context, *AppIdRequest) (*AppIdResponse, error)
 }
 
@@ -322,7 +322,7 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type SdkNotificationServiceClient interface {
-	// / Send stream of event notifications based on the agent subscriptions
+	// Send stream of event notifications based on the agent subscriptions
 	NotificationStream(ctx context.Context, in *NotificationStreamRequest, opts ...grpc.CallOption) (SdkNotificationService_NotificationStreamClient, error)
 }
 
@@ -370,7 +370,7 @@ func (x *sdkNotificationServiceNotificationStreamClient) Recv() (*NotificationSt
 // All implementations should embed UnimplementedSdkNotificationServiceServer
 // for forward compatibility
 type SdkNotificationServiceServer interface {
-	// / Send stream of event notifications based on the agent subscriptions
+	// Send stream of event notifications based on the agent subscriptions
 	NotificationStream(*NotificationStreamRequest, SdkNotificationService_NotificationStreamServer) error
 }
 
